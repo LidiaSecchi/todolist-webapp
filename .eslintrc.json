@@ -1,0 +1,49 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "overrides": [
+    {
+      "env": {
+        "node": true
+      },
+      "files": [".eslintrc.{js,cjs}"],
+      "parserOptions": {
+        "sourceType": "script"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["@typescript-eslint", "react", "prettier"],
+  "rules": {
+    "no-undef": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "no-shadow": "off",
+    "no-alert": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-unused-vars": [
+      "off",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+    ],
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "no-param-reassign": ["error", { "props": false }],
+    "react/prop-types": [0]
+  },
+  "settings": { "import/core-modules": ["styled-jsx/css"] }
+}
